@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Archit — Builder</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<title>Archit Ghuwalewala</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -13,7 +13,7 @@
     --accent1: #ff5f6d; --accent2: #a259ff; --accent3: #00e5c4;
     --grad: linear-gradient(135deg, var(--accent1), var(--accent2));
     --grad2: linear-gradient(135deg, var(--accent2), var(--accent3));
-    --font-display: 'Syne', sans-serif; --font-mono: 'DM Mono', monospace;
+    --font-display: 'Space Grotesk', sans-serif; --font-mono: 'JetBrains Mono', monospace;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-display); overflow-x: hidden; cursor: none; }
@@ -21,7 +21,7 @@
   .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(255,95,109,0.4); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: border-color 0.2s; }
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(9,9,16,0.75); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-  .nav-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .nav-logo { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .nav-links { display: flex; gap: 32px; }
   .nav-links a { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; cursor: none; }
   .nav-links a:hover { color: var(--text); }
@@ -32,10 +32,15 @@
   .blob2 { width: 400px; height: 400px; background: rgba(255,95,109,0.12); bottom: 0; left: -80px; }
   .blob3 { width: 300px; height: 300px; background: rgba(0,229,196,0.08); top: 40%; right: 20%; }
   .hero-tag { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent3); text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
-  .hero-name { font-size: clamp(4rem, 10vw, 9rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.04em; opacity: 0; animation: fadeUp 0.8s 0.35s forwards; }
+  .hero-name { font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 700; line-height: 1.0; letter-spacing: -0.02em; opacity: 0; animation: fadeUp 0.8s 0.35s forwards; }
   .hero-name span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero-sub { margin-top: 32px; font-size: 1.1rem; color: var(--muted); max-width: 520px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
-  .hero-ctas { margin-top: 48px; display: flex; gap: 16px; opacity: 0; animation: fadeUp 0.8s 0.65s forwards; }
+  .hero-sub { margin-top: 32px; font-size: 1.15rem; color: var(--muted); max-width: 580px; line-height: 1.75; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+  .hero-sub em { color: var(--text); font-style: normal; }
+  .hero-split { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 580px; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
+  .hero-split-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 16px 20px; }
+  .hero-split-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent1); margin-bottom: 6px; }
+  .hero-split-val { font-size: 0.85rem; color: var(--text); line-height: 1.4; }
+  .hero-ctas { margin-top: 40px; display: flex; gap: 16px; opacity: 0; animation: fadeUp 0.8s 0.75s forwards; }
   .btn-primary { padding: 14px 28px; background: var(--grad); border: none; border-radius: 6px; color: #fff; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: none; transition: opacity 0.2s, transform 0.2s; }
   .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
   .btn-ghost { padding: 14px 28px; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: none; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
@@ -44,17 +49,17 @@
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent2), transparent); animation: scrollPulse 2s ease-in-out infinite; }
   #about { padding: 120px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .section-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent1); text-transform: uppercase; margin-bottom: 16px; }
-  .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
-  .about-text { margin-top: 24px; color: var(--muted); line-height: 1.8; font-size: 1rem; }
+  .section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  .about-text { margin-top: 24px; color: var(--muted); line-height: 1.85; font-size: 1rem; }
   .about-text p + p { margin-top: 16px; }
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
   .stat-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 24px; position: relative; overflow: hidden; }
   .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); opacity: 0; transition: opacity 0.3s; }
   .stat-card:hover::before { opacity: 1; }
-  .stat-num { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.04em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-num { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .stat-label { margin-top: 4px; font-size: 0.8rem; color: var(--muted); }
   #projects { padding: 120px 48px; max-width: 1200px; margin: 0 auto; }
-  .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
+  .projects-header { margin-bottom: 56px; }
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .project-card { background: var(--surface); border: 1px solid var(--border); padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), border-color 0.3s; cursor: none; }
   .project-card::after { content: ''; position: absolute; inset: 0; background: var(--grad); opacity: 0; transition: opacity 0.3s; z-index: 0; }
@@ -92,9 +97,9 @@
   #contact { padding: 120px 48px; text-align: center; position: relative; overflow: hidden; }
   .contact-blob { position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none; }
   .cblob1 { width: 600px; height: 600px; background: rgba(162,89,255,0.12); top: -200px; left: 50%; transform: translateX(-50%); }
-  .contact-big { font-size: clamp(2.5rem, 7vw, 6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  .contact-big { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
   .contact-big span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .contact-sub { margin-top: 24px; color: var(--muted); font-size: 1rem; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.7; position: relative; z-index: 1; }
+  .contact-sub { margin-top: 24px; color: var(--muted); font-size: 1rem; max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.7; position: relative; z-index: 1; }
   .contact-links { margin-top: 48px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
   .contact-link { padding: 14px 32px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 0.9rem; font-weight: 600; text-decoration: none; cursor: none; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
   .contact-link:hover { border-color: var(--accent2); color: var(--text); transform: translateY(-2px); }
@@ -111,66 +116,68 @@
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
 </style>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
- 
 <nav>
   <div class="nav-logo">archit.</div>
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#now">Now</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#now">Now</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
   </div>
 </nav>
- 
+
+<!-- HERO — VERSION B: THE CONTRAST -->
 <section id="hero">
   <div class="hero-bg-blob blob1"></div>
   <div class="hero-bg-blob blob2"></div>
   <div class="hero-bg-blob blob3"></div>
-  <div class="hero-tag">Builder · Tinkerer · SF Bay Area</div>
-  <h1 class="hero-name">Hi, I'm<br/><span>Archit.</span></h1>
-  <p class="hero-sub">I build things at the intersection of AI, automation, and interfaces. Currently obsessed with making software that feels like it thinks for itself.</p>
+  <div class="hero-tag">Senior Staff TPM · Builder · SF Bay Area</div>
+  <h1 class="hero-name">Archit<br/><span>Ghuwalewala.</span></h1>
+  <p class="hero-sub">By day I help ship the software inside <em>Meta Quest</em>. By night I'm building AI assistants, pointing cameras at distant galaxies, and figuring out what to build next.</p>
+  <div class="hero-split">
+    <div class="hero-split-item">
+      <div class="hero-split-label">Day job</div>
+      <div class="hero-split-val">VR operating systems, 14+ years, Meta Quest</div>
+    </div>
+    <div class="hero-split-item">
+      <div class="hero-split-label">Night job</div>
+      <div class="hero-split-val">AI agents, trading bots, astrophotography</div>
+    </div>
+  </div>
   <div class="hero-ctas">
-    <a href="#projects" class="btn-primary">See my work</a>
-    <a href="#blog" class="btn-ghost">Read the blog</a>
+    <a href="#projects" class="btn-primary">See what I build</a>
+    <a href="#about" class="btn-ghost">My story</a>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    scroll
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
 </section>
- 
+
+<!-- ABOUT -->
 <section id="about">
   <div>
     <div class="section-label reveal">About me</div>
-    <h2 class="section-title reveal reveal-delay-1">I build things<br/>that think.</h2>
+    <h2 class="section-title reveal reveal-delay-1">Two lives,<br/>one person.</h2>
     <div class="about-text reveal reveal-delay-2">
-      <p>I'm a builder based in the SF Bay Area with a deep interest in AI systems, automation, and interfaces that feel genuinely intelligent. I spend most of my time turning ideas into working software.</p>
-      <p>Whether it's a multi-agent AI system, an automated trading bot, or a Jarvis-style assistant — I build things the same way: obsessively, iteratively, and with way too many tabs open.</p>
+      <p>I'm a Senior Staff Technical Program Manager at Meta, where I've spent 14+ years — from User Operations in Hyderabad to helping lead VR OS releases for Meta Quest 2, 3, and 3S in Burlingame.</p>
+      <p>The path here wasn't straight. I grew up in Kolkata, took every wrong turn available, and got here anyway — through hustle, curiosity, and a tendency to show up and figure it out.</p>
+      <p>Outside of work I build things for fun — AI systems, automated trading agents, astrophotography setups. Same energy, different canvas.</p>
     </div>
   </div>
   <div class="about-stats reveal reveal-delay-2">
-    <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Projects shipped</div></div>
-    <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Rabbit holes explored</div></div>
-    <div class="stat-card"><div class="stat-num">AI</div><div class="stat-label">Primary obsession</div></div>
-    <div class="stat-card"><div class="stat-num">SF</div><div class="stat-label">Based in</div></div>
+    <div class="stat-card"><div class="stat-num">14+</div><div class="stat-label">Years at Meta</div></div>
+    <div class="stat-card"><div class="stat-num">200+</div><div class="stat-label">Software releases shipped</div></div>
+    <div class="stat-card"><div class="stat-num">80%</div><div class="stat-label">Release cycle reduction, Oculus</div></div>
+    <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Quest generations shipped</div></div>
   </div>
 </section>
- 
+
 <div class="section-divider"></div>
- 
+
 <section id="projects">
   <div class="projects-header">
-    <div>
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-title reveal reveal-delay-1">Things I've<br/>built.</h2>
-    </div>
+    <div class="section-label reveal">Side projects</div>
+    <h2 class="section-title reveal reveal-delay-1">Things I build<br/>for fun.</h2>
   </div>
   <div class="projects-grid">
     <div class="project-card reveal">
@@ -185,31 +192,23 @@
       <div class="project-desc">Automated stock trading system using Alpaca's paper trading API. Signal-based buy/sell logic with a +5% profit target and CSV-driven strategy input.</div>
       <div class="project-tags"><span class="tag hot">Active</span><span class="tag">Python</span><span class="tag">Alpaca API</span></div>
     </div>
- 
-    <div class="project-card reveal reveal-delay-1">
+    <div class="project-card reveal reveal-delay-2">
       <div class="project-icon">🧠</div>
       <div class="project-title">Multi-Agent System</div>
       <div class="project-desc">Hierarchical manager/report agent architecture using the Anthropic API. Exploring how AI agents can delegate tasks and coordinate autonomously.</div>
       <div class="project-tags"><span class="tag">Anthropic API</span><span class="tag">Agents</span><span class="tag">Python</span></div>
     </div>
- 
-    <div class="project-card reveal reveal-delay-3">
-      <div class="project-icon">✦</div>
-      <div class="project-title">More coming</div>
-      <div class="project-desc">Always building. Check the blog for what's currently in progress, or the Now page to see what's got my attention this week.</div>
-      <div class="project-tags"><span class="tag">WIP</span></div>
-    </div>
   </div>
 </section>
- 
+
 <div class="section-divider"></div>
- 
+
 <section id="now">
   <div class="section-label reveal">Now</div>
-  <h2 class="section-title reveal reveal-delay-1">What I'm<br/>working on.</h2>
+  <h2 class="section-title reveal reveal-delay-1">What's got<br/>my attention.</h2>
   <div class="now-card reveal reveal-delay-2">
     <div class="now-pulse"><span class="pulse-dot"></span>Updated May 2026</div>
-    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.7;">A snapshot of what's got my attention right now. Updated whenever something shifts.</p>
+    <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.7;">A snapshot of what I'm currently building, exploring, and thinking about.</p>
     <div class="now-items">
       <div class="now-item">
         <div class="now-item-icon">📊</div>
@@ -219,25 +218,25 @@
         </div>
       </div>
       <div class="now-item">
-        <div class="now-item-icon">🔗</div>
+        <div class="now-item-icon">🔭</div>
         <div>
-          <div class="now-item-title">Exploring AI agent architectures</div>
-          <div class="now-item-desc">Deep in multi-agent systems — thinking about how hierarchical agents can handle complex tasks with minimal human intervention.</div>
+          <div class="now-item-title">Astrophotography</div>
+          <div class="now-item-desc">Pointing a Canon RA and star tracker at deep sky objects from the Bay Area. Recently captured the Orion Nebula complex and Andromeda Galaxy.</div>
         </div>
       </div>
       <div class="now-item">
-        <div class="now-item-icon">🎵</div>
+        <div class="now-item-icon">🎾</div>
         <div>
-          <div class="now-item-title">Catching shows</div>
-          <div class="now-item-desc">Always on the lookout for the next good electronic music event in the Bay Area.</div>
+          <div class="now-item-title">Tennis</div>
+          <div class="now-item-desc">Playing regularly around the Bay Area. Former sports captain trying to keep that competitive edge alive.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <div class="section-divider"></div>
- 
+
 <section id="blog">
   <div class="section-label reveal">Build log</div>
   <h2 class="section-title reveal reveal-delay-1">Things I've<br/>figured out.</h2>
@@ -259,52 +258,40 @@
     <div class="blog-card reveal reveal-delay-3">
       <div class="blog-number">003</div>
       <div class="blog-date">Coming soon</div>
-      <div class="blog-title">Building a Jarvis: what I learned making my own AI assistant</div>
-      <div class="blog-excerpt">From sci-fi HUD to actual daily driver — how I built a personal AI that works the way I think.</div>
+      <div class="blog-title">What photographing galaxies taught me about patience</div>
+      <div class="blog-excerpt">On astrophotography, long exposures, and why some things are worth waiting for in the dark.</div>
       <div class="blog-read">Read</div>
     </div>
   </div>
 </section>
- 
+
 <div class="section-divider"></div>
- 
+
 <section id="contact">
   <div class="contact-blob cblob1"></div>
   <h2 class="contact-big reveal">Let's build<br/><span>something.</span></h2>
   <p class="contact-sub reveal reveal-delay-1">Always open to interesting conversations, collaborations, or just chatting about what you're working on.</p>
   <div class="contact-links reveal reveal-delay-2">
-    <a href="mailto:hello@archit.dev" class="contact-link primary">✉ Say hello</a>
+    <a href="mailto:archit.ghuwalewala@gmail.com" class="contact-link primary">✉ Say hello</a>
+    <a href="https://linkedin.com/in/architghuwalewala" class="contact-link">▣ LinkedIn</a>
     <a href="#" class="contact-link">⌥ GitHub</a>
-    <a href="#" class="contact-link">◈ Twitter / X</a>
-    <a href="#" class="contact-link">▣ LinkedIn</a>
   </div>
 </section>
- 
+
 <footer>
-  <div><span class="footer-dot"></span>archit. — builder, tinkerer, SF</div>
-  <div>designed &amp; built by me ✦</div>
+  <div><span class="footer-dot"></span>Archit Ghuwalewala — builder, tinkerer, SF</div>
+  <div>built by me, obviously ✦</div>
 </footer>
- 
+
 <script>
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
-  });
-  function animateRing() {
-    rx += (mx - rx - 18) * 0.12;
-    ry += (my - ry - 18) * 0.12;
-    ring.style.transform = `translate(${rx}px, ${ry}px)`;
-    requestAnimationFrame(animateRing);
-  }
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.transform = `translate(${mx-6}px, ${my-6}px)`; });
+  function animateRing() { rx += (mx-rx-18)*0.12; ry += (my-ry-18)*0.12; ring.style.transform = `translate(${rx}px, ${ry}px)`; requestAnimationFrame(animateRing); }
   animateRing();
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1}).observe(el));
   document.querySelectorAll('a, .project-card, .blog-card, .stat-card').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.style.background = 'var(--accent2)'; ring.style.borderColor = 'rgba(162,89,255,0.5)'; });
     el.addEventListener('mouseleave', () => { cursor.style.background = 'var(--accent1)'; ring.style.borderColor = 'rgba(255,95,109,0.4)'; });
